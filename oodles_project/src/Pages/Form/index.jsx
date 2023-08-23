@@ -18,6 +18,7 @@ export default function Form() {
 
   const handleClick = (e) => {
     e.preventDefault();
+    console.log(task);
     dispatch(addTask(task));
     navigate("/");
   };
