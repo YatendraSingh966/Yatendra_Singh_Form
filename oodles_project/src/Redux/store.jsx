@@ -3,7 +3,3 @@ import { reducer } from "./reducer";
 import thunk from "redux-thunk";
 
 export const store = legacy_createStore(reducer, applyMiddleware(thunk));
-
-// if (window.Cypress) {
-//   window.reduxStore = store;
-// }

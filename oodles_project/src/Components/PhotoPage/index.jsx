@@ -2,7 +2,6 @@ import { Button, Space } from "antd";
 
 import React, { useRef, useState } from "react";
 import Webcam from "react-webcam";
-import { useNavigate } from "react-router-dom";
 
 const videoConstraints = {
   width: 300,
@@ -17,9 +16,6 @@ export default function PhotoPage({ photo, setImage }) {
     const imageSrc = webcamRef.current.getScreenshot();
     setUrl(imageSrc);
   }, [webcamRef]);
-  // const showImage = () => {
-  //   image = webRef.current.getScreenshot();
-  // };
 
   const onUserMedia = (e) => {};
 
