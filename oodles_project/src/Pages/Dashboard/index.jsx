@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Typography } from "antd";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import TaskItems from "../../Components/TaskItems";
 
 export default function Dashboard() {
@@ -10,12 +10,8 @@ export default function Dashboard() {
     <div>
       <Typography.Title level={4}>Dashboard</Typography.Title>
       <div>
-        {tasks?.map((elem) => {
-          return (
-            <div key={elem.id}>
-              <TaskItems key={elem.id} {...elem} />
-            </div>
-          );
+        {tasks?.map((elem, index) => {
+          return <TaskItems key={index} {...elem} />;
         })}
       </div>
     </div>

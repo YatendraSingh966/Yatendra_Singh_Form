@@ -1,7 +1,7 @@
 import * as types from "./actionTypes";
 
 const initialState = {
-  tasks: [{}],
+  tasks: [],
 };
 
 const reducer = (state = initialState, action) => {

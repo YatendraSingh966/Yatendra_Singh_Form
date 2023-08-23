@@ -1,14 +1,14 @@
 import React from "react";
 import { Space, Avatar, Typography } from "antd";
 
-export default function TaskItems({ deviceid, photo, lat, log }) {
+export default function TaskItems(prop) {
   return (
     <div
       style={{ display: "flex", border: "1px dotted grey", padding: " 18px" }}
     >
       <div style={{ display: "flex" }}>
         <img
-          src={photo}
+          src={prop.photo.url}
           alt="XYZ"
           width="250px"
           style={{ borderRadius: "8px" }}
@@ -29,7 +29,7 @@ export default function TaskItems({ deviceid, photo, lat, log }) {
           }}
         >
           <h5>Device Id: </h5>
-          <p>{deviceid}</p>
+          <p>{prop.deviceid}</p>
         </div>
         <div
           style={{
@@ -39,7 +39,7 @@ export default function TaskItems({ deviceid, photo, lat, log }) {
           }}
         >
           <h5>Lat : </h5>
-          <p> {lat}</p>
+          <p> {prop.lat}</p>
         </div>
         <div
           style={{
@@ -49,7 +49,7 @@ export default function TaskItems({ deviceid, photo, lat, log }) {
           }}
         >
           <h5>Log :</h5>
-          <p>{log}</p>
+          <p>{prop.log}</p>
         </div>
       </div>
     </div>

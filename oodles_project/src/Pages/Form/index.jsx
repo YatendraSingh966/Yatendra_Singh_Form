@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Button, Space, Typography } from "antd";
 import { useNavigate } from "react-router-dom";
 import PhotoPage from "../../Components/PhotoPage";
@@ -36,7 +36,7 @@ export default function Form() {
     >
       <Typography.Title level={4}>Form</Typography.Title>
       <Space style={{ display: "flex", margin: "28px 0 0 0" }}>
-        <PhotoPage setImage={setTask} />
+        <PhotoPage setImage={setTask} {...task} />
       </Space>
       <form
         style={{
@@ -61,7 +61,7 @@ export default function Form() {
           onChange={(e) =>
             setTask((prev) => ({ ...prev, deviceid: e.target.value }))
           }
-        ></input>
+        />
         <input
           type="text"
           required
@@ -78,7 +78,7 @@ export default function Form() {
           onChange={(e) =>
             setTask((prev) => ({ ...prev, lat: e.target.value }))
           }
-        ></input>
+        />
         <input
           type="text"
           required
@@ -95,7 +95,7 @@ export default function Form() {
           onChange={(e) =>
             setTask((prev) => ({ ...prev, log: e.target.value }))
           }
-        ></input>
+        />
       </form>
       <Button onClick={handleClick} type="primary" size="large">
         Submit

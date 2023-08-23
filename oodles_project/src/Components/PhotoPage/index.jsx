@@ -9,15 +9,12 @@ const videoConstraints = {
   facingMode: "environment",
 };
 
-export default function PhotoPage({ setImage }) {
-  const navigate = useNavigate();
-  const [disable, setDisable] = useState(false);
+export default function PhotoPage({ photo, setImage }) {
   const webcamRef = useRef(null);
   const [url, setUrl] = useState(null);
 
   const capturePhoto = React.useCallback(async () => {
     const imageSrc = webcamRef.current.getScreenshot();
-
     setUrl(imageSrc);
   }, [webcamRef]);
   // const showImage = () => {
@@ -32,6 +29,7 @@ export default function PhotoPage({ setImage }) {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
+        margin: "18px",
       }}
     >
       <Space>
